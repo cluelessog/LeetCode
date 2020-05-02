@@ -79,7 +79,6 @@ public:
                 l3 = l3->next;
                 l2 = l2->next;
             }
-        
         if(carry)
         {
             ListNode *ans = new ListNode(carry);
