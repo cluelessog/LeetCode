@@ -30,6 +30,7 @@ public:
                 carry = 0;
                 ans = new ListNode(tempSum);
             }
+            
             if(l3 == NULL)
             {
                 l3 = ans;
