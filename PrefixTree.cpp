@@ -38,16 +38,10 @@ public:
         TrieNode* curr = root;
         for(int i = 0 ; i < word.size(); i++)
         {
-            if(curr->links[word[i]-'a'] != NULL)
-            {
-                curr = curr->links[word[i]-'a'];
-            }
-            else
-            {
-                return NULL;
-            }
+            if(curr->links[word[i]-'a'] == NULL) return false;
+            curr = curr->links[word[i]-'a'];
         }
-        return (curr != NULL) && curr->isEnd;
+        return curr->isEnd;
     }
     
     /** Returns if there is any word in the trie that starts with the given prefix. */
@@ -55,17 +49,10 @@ public:
         TrieNode* curr = root;
         for(int i = 0 ; i < prefix.size(); i++)
         {
-            if(curr->links[prefix[i]-'a'] != NULL)
-            {
-                curr = curr->links[prefix[i]-'a'];
-            }
-            else
-            {
-                return NULL;
-            }
-            
+            if(curr->links[prefix[i]-'a'] == NULL) return false;
+            curr = curr->links[prefix[i]-'a'];    
         }
-        return curr != NULL;
+        return true;
     }
 };
 
